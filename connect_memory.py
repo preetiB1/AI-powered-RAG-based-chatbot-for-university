@@ -10,7 +10,6 @@ from langchain_huggingface import HuggingFaceEndpoint
 from langchain_groq import ChatGroq
 
 
-## Uncomment the following files if you're not using pipenv as your virtual environment manager
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
@@ -63,12 +62,7 @@ def main():
 
                 Start the answer directly. No small talk please.
                 """
-        
-        #HUGGINGFACE_REPO_ID="mistralai/Mistral-7B-Instruct-v0.3" # PAID
-        #HF_TOKEN=os.environ.get("HF_TOKEN")  
-
-        #TODO: Create a Groq API key and add it to .env file
-        
+    
         try: 
             vectorstore=get_vectorstore()
             if vectorstore is None:
@@ -99,4 +93,5 @@ def main():
             st.error(f"Error: {str(e)}")
 
 if __name__ == "__main__":
+
     main()
